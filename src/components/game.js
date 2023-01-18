@@ -11,7 +11,7 @@ export default function Game(game) {
     <section className="game-show">
       <h2>Title: {game.name}</h2>
       <p>Description: {game.description}</p>
-      <p>Release date: {friendlyDate(game.release_date)}</p>
+      <p>Release date: {game.release_date && friendlyDate(game.release_date)}</p>
       <p>anticipation: {game.anticipation}</p>
     </section>
   )
