@@ -6,7 +6,12 @@ export default function GamesIndex() {
   const [games, setGames] = useState([])
 
   function getGames() {
-    setGames([{ id: 1, name: "test" }, { id: 2, name: "test 2" }])
+    axios.get("http://localhost:3000/games").then(response => {
+      console.log(response.data)
+      setGames(response.data)
+    }).catch(error => {
+      console.log(error)
+    })
   }
 
   useEffect(getGames, [])
